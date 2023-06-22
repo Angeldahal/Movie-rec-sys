@@ -12,7 +12,7 @@ try:
         vectorizer = pickle.load(v)
 except FileNotFoundError:
     print("Generating required files...")
-    vectorizer = TfidfVectorizer(max_features=10000, ngram_range=(1, 4), stop_words="english")
+    vectorizer = TfidfVectorizer(max_features=10000, ngram_range=(1, 3), stop_words="english")
     vectorizer = vectorizer.fit(df["combined"])
     sparse_overview = vectorizer.fit_transform(df["combined"])
     
