@@ -6,9 +6,9 @@ import streamlit as st
 
 try:
     df = pd.read_csv("condensed_data.csv", lineterminator="\n")
-    with open("./sparse_overview.pickle", 'rb') as f:
+    with open("assets/sparse_overview.pickle", 'rb') as f:
         sparse_overview = pickle.load(f)
-    with open('./vectorizer.pickle', 'rb') as v:
+    with open('assets/vectorizer.pickle', 'rb') as v:
         vectorizer = pickle.load(v)
 except FileNotFoundError:
     print("Generating required files...")
